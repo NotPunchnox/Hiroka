@@ -1,0 +1,30 @@
+{
+  "name": "hiroka",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/router.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NotPunchnox/Hiroka.git"
+  },
+  "keywords": [
+    "punchnox",
+    "client",
+    "chat",
+    "api"
+  ],
+  "author": "punchnox",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NotPunchnox/Hiroka/issues"
+  },
+  "homepage": "https://github.com/NotPunchnox/Hiroka#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "flakeid": "^1.0.0",
+    "nodemailer": "^6.6.2"
+  }
+}
