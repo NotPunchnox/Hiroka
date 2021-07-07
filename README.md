@@ -5,15 +5,19 @@
 install: `npm i`,
 launch: `npm run start` or `nodemon` ( `npm i nodemon `)
 
+---
+
 for the moment I have made the authentication system with a token which will be generated (jsonwebtoken), the algorithm used is as follows: `HS256`
+
+##### jwt:
+![ScreenShot](https://grafikart.fr/uploads/2017/10/jwt.png)
 
 #### endpoint:
 
-protocol://origin/register
+methode: `POST` register
+http://localhost:port/register
 
-*methode*: POST
-
-body:
+BODY raw js:
 ```js
 {
     username: "username",
@@ -24,15 +28,16 @@ body:
 
 ```js
 return {
-  token: String
+  token: String(jwt)
 }
 ```
+
 ---
-protocol://origin/login
 
-*method*: POST
+methode: `POST` login
+http://localhost:port/login
 
-body:
+BODY raw js:
 ```js
 {
     email: "email@example.com",
@@ -42,5 +47,5 @@ body:
 
 ```js
 return {
-  token: String
+  token: String(jwt)
 }

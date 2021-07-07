@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
 
     const client = await user.findOne({ email: email })
 
-    if (!client) return res.status(403).json(new Response(400, 'Invalid email.'))
+    if (!client) return res.status(403).json(new Response(403, 'Invalid email.'))
 
     if(!await bcrypt.compare(password, client.password)) return res.status(403).json(new Response(400, 'Invalid password.'))
 

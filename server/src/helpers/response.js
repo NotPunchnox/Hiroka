@@ -20,7 +20,7 @@ module.exports = class Response {
     static get accepted() {
         return new Response(202, 'Accepted')
     }
-    static get notfound() {
+    static get nocontent() {
         return new Response(204)
     }
     static get contentdifferent() {

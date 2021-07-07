@@ -20,6 +20,8 @@ module.exports = mongoose.model('user', new mongoose.Schema({
         required: true
     },
     avatar: String,
+    bio: String,
+    status: Number,
     CreatedAt: {
         default: Date.now(),
         type: Date,
