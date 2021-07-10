@@ -20,17 +20,20 @@ http://localhost:port/register
 BODY raw js:
 ```js
 {
-    username: "username",
+    username: String,
     email: "email@example.com",
-    password: "password"
+    password: String
 }
 ```
 
 ```js
-return {
+{
   token: String(jwt)
 }
+
+return res.redirect('/home'), session.token = String(jwt)
 ```
+
 
 ---
 
@@ -41,11 +44,47 @@ BODY raw js:
 ```js
 {
     email: "email@example.com",
-    password: "password"
+    password: String
 }
 ```
 
 ```js
-return {
+{
   token: String(jwt)
 }
+
+return res.redirect('/home'), session.token = String(jwt)
+```
+
+---
+
+methode: `PATCH` @me
+http://localhost:port/@me
+
+BODY raw js:
+```js
+{
+    email: "email@example.com",
+    password: String,
+    status: Number(0 || 1),
+    bio: String,
+    username: String
+}
+```
+
+```js
+{
+  token: String(jwt)
+}
+
+return res.redirect('/home'), session.token = String(jwt)
+```
+### client
+
+The client is made with the template `HJS` (Hogan.js), which allows to call the html pages from node.js.
+
+```coffee
+files:
+  /src/public
+  /src/views
+```
