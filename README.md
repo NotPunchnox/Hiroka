@@ -1,9 +1,11 @@
 # HIROKA
 
+Hiroka is micro services forum.
+
 ### server:
 
 install: `npm i`,
-launch: `npm run start` or `nodemon` ( `npm i nodemon `)
+launch: `pm2 start './gateway/main.js'`
 
 ---
 
@@ -12,10 +14,12 @@ for the moment I have made the authentication system with a token which will be 
 ##### jwt:
 ![ScreenShot](https://grafikart.fr/uploads/2017/10/jwt.png)
 
+port 8080 = gateway
+
 #### endpoint:
 
 methode: `POST` register
-http://localhost:port/register
+http://localhost:8080/auth/register
 
 BODY raw js:
 ```js
@@ -30,15 +34,13 @@ BODY raw js:
 {
   token: String(jwt)
 }
-
-return res.redirect('/home'), session.token = String(jwt)
 ```
 
 
 ---
 
 methode: `POST` login
-http://localhost:port/login
+http://localhost:8080/auth/login
 
 BODY raw js:
 ```js
@@ -52,8 +54,6 @@ BODY raw js:
 {
   token: String(jwt)
 }
-
-return res.redirect('/home'), session.token = String(jwt)
 ```
 
 ---
@@ -76,14 +76,12 @@ BODY raw js:
 {
   token: String(jwt)
 }
-
-return res.redirect('/home'), session.token = String(jwt)
 ```
 ### client
 
 The client is made with the template `HJS` (Hogan.js), which allows to call the html pages from node.js.
 
-```coffee
+```ruby
 files:
   /src/public
   /src/views
